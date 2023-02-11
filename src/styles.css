@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+:root {
+    --text-color: #BAE6FD;
+    --text-disabled-color: #57656d;
+    --hint-color: #556f7d;
+    --bg-main-color: #111827;
+    --scrollbar-color: #1E3A8A;
+  }
+  
+
+
+html, body { 
+    background-color: var(--bg-main-color);
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.content {
+    display: flex;
+    margin: 20px auto;
+    padding: 0 16px;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+.input-icon {
+    margin-left: 6px;
+    margin-top: 16px;
+    /* font-size: 36px;
+    height: 36px !important;
+    width: 36px !important; */
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+}
+
+p {
+    margin: 0px;
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #49c5b6 ;
+}
+
+:host ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #49c5b6 ;
+}
+
+/* TODO fic scrolling style for Chrome usw. */
+.output {
+    overflow-y: auto; 
+    overflow-x: visible;
+    min-height: 2em;
+    font-size: 18px;
+    flex: 1;
+    color: #FEF08A;
+    
+    white-space: nowrap;
+    scrollbar-color: var(--scrollbar-color) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+.output * {
+    border-bottom: 2px solid white;
+    color: inherit;
+    font-size: inherit;
+}
+
+mat-slide-toggle {
+    margin-right: -5px !important;
+}
+
+.icon-interactive:hover {
+    background-color: #5e90fc85;
+    border-radius: 25%;
+}
+
+.icon-interactive:active {
+    background-color: #9cbcffb2;
+    border-radius: 25%;
+}
+
+
+
+
+
+
+* {
+    color: var(--text-color);
+}
+
+/* Mat input fields */
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #1F2937;
+}
+input {
+    color: var(--text-color) !important;
+}
+input::placeholder {
+    color: var(--hint-color) !important;
+}
+/* mat-form-field {
+    flex: 1;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* Disabling a Textarea */
+.mdc-text-field--filled.mdc-text-field--disabled {
+    background-color: #1F2937;
+    cursor: not-allowed;
+    pointer-events: all;
+}
+.mdc-text-field--disabled * {
+    color: var(--text-disabled-color);
+}
+.mdc-text-field--disabled *:hover {
+    cursor: not-allowed;
+    pointer-events: all;
+}
+

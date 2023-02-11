@@ -1,0 +1,82 @@
+<div class="builder">
+    <div style="display: flex; gap: 12px;">
+        <mat-form-field style="flex: 1;">
+            <mat-label>Main Subject</mat-label>
+            <input [(ngModel)]="subject" (input)="updatePrompt();" matInput placeholder="yellow lemon tree">
+        </mat-form-field>
+
+        
+            
+        <div style="flex: 1; display: inline-flex; overflow: hidden;">
+            <mat-form-field style="flex: 1;">
+                <mat-label>Type of Picture</mat-label>
+                <input [(ngModel)]="typeOfPicture" (input)="typeOfPicture=typeOfPicture.trim(); updatePrompt();" matInput placeholder="polaroid picture">
+            </mat-form-field>
+
+            <mat-icon class="input-icon icon-interactive">list</mat-icon>
+        </div>
+            
+    </div>
+
+    <div style="display: flex; gap: 12px;">
+        <mat-form-field style="flex: 1;">
+            <mat-label>Name</mat-label>
+            <input [(ngModel)]="name" matInput placeholder="Lemon Tree">
+        </mat-form-field>
+
+        
+            
+        
+        <div style="flex: 1; display: inline-flex; overflow: hidden;">
+            <mat-form-field style="flex: 1;">
+                <mat-label>Style</mat-label>
+                <input [(ngModel)]="style" (input)="style=style.trim(); updatePrompt();" matInput placeholder="4k divine">
+            </mat-form-field>
+
+            <mat-icon class="input-icon icon-interactive">list</mat-icon>
+        </div>
+            
+    </div>
+
+    <div style="display: flex; gap: 12px;">
+        <div style="flex: 1;"></div>
+            
+        <div style="flex: 1; display: inline-flex; overflow: hidden;">
+            <mat-form-field style="flex: 1;">
+                <mat-label>Artist</mat-label>
+                <input [(ngModel)]="artist" (input)="artist=artist.trim(); updatePrompt();" matInput placeholder="Bob Ross">
+            </mat-form-field>
+
+            <mat-icon class="input-icon icon-interactive">list</mat-icon>
+        </div>
+            
+    </div>
+    
+    <div style="flex: 1; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center;">
+            <label for="prompt_out">Resulting Prompt</label>
+
+            <div style="flex: 1;"></div>
+
+            <div style="display: flex; gap: 12px; margin-bottom: 5px;">
+                <p>Use Template?</p>
+                <section class="example-section">
+                    <mat-slide-toggle
+                        class="example-margin"
+                        color="primary"
+                        [(ngModel)]="useTemplate"
+                        (change)="updatePrompt()">
+                    </mat-slide-toggle>
+                </section>
+            </div>
+        </div>
+        
+        <div style="display: flex">
+            <div class="output">
+                <div id="prompt_out">{{prompt}}</div>
+            </div>
+
+            <img src="assets/copy.svg" class="icon icon-interactive" matTooltip="Copy Prompt" matTooltipShowDelay="500" [cdkCopyToClipboard]="prompt" style="margin-left: 6px; margin-top: 4px;">
+        </div>        
+    </div>
+</div>
