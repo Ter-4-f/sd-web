@@ -8,17 +8,21 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
+import { ImageMakerComponent } from './image-maker/image-maker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GeneratorComponent,
-    PromptBuilderComponent
+    PromptBuilderComponent,
+    ImageMakerComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { PromptBuilderComponent } from './prompt-builder/prompt-builder.componen
     MatIconModule,
     MatSlideToggleModule,
     ClipboardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

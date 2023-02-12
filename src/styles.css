@@ -3,9 +3,11 @@
 :root {
     --text-color: #BAE6FD;
     --text-disabled-color: #57656d;
+    --text-highlight-color: #FEF08A;
     --hint-color: #556f7d;
     --bg-main-color: #111827;
     --scrollbar-color: #1E3A8A;
+    --background-highlight: #190061;
   }
   
 
@@ -60,7 +62,7 @@ p {
     min-height: 2em;
     font-size: 18px;
     flex: 1;
-    color: #FEF08A;
+    color: var(--text-highlight-color);
     
     white-space: nowrap;
     scrollbar-color: var(--scrollbar-color) rgba(0, 0, 0, 0);

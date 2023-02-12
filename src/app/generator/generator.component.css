@@ -1,3 +1,27 @@
 app-prompt-builder {
     width: 100% !important;
 }
+
+app-image-maker {
+    margin-top: 12px;
+}
+
+#generate_button {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #A21CAF;
+    color: var(--text-highlight-color);
+    font-size: 16px;
+    margin-top: 24px;
+}
+
+#generate_button:disabled {
+    background-color: #FB7185;
+}
+#generate_button:hover:not(:disabled) {
+    background-color: #86198F;
+}
+#generate_button:hover:disabled {
+    cursor: not-allowed;
+}

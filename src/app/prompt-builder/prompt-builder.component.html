@@ -2,7 +2,7 @@
     <div style="display: flex; gap: 12px;">
         <mat-form-field style="flex: 1;">
             <mat-label>Main Subject</mat-label>
-            <input [(ngModel)]="subject" (input)="updatePrompt();" matInput placeholder="yellow lemon tree">
+            <input [(ngModel)]="subject" (input)="subject=subject.trim(); updatePrompt();" matInput placeholder="yellow lemon tree">
         </mat-form-field>
 
         
@@ -20,7 +20,7 @@
 
     <div style="display: flex; gap: 12px;">
         <mat-form-field style="flex: 1;">
-            <mat-label>Name</mat-label>
+            <mat-label matTooltip="The Name of the resulting Image-File, optional" matTooltipShowDelay="500">Name</mat-label>
             <input [(ngModel)]="name" matInput placeholder="Lemon Tree">
         </mat-form-field>
 

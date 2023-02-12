@@ -1,3 +1,5 @@
 <div class="content">
-  <app-prompt-builder></app-prompt-builder>
+  <app-prompt-builder (promptReadyEvent)="updatePromtStatus($event)" (promptEvent)="updatePromt($event)"></app-prompt-builder>
+  <button id="generate_button" [disabled]="!canGenerate" (click)="onGenerate()">Generate Image</button>
+  <app-image-maker [config]="config"></app-image-maker>
 </div>

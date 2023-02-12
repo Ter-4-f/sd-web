@@ -1,0 +1,26 @@
+<div class="generation-container-one">
+    <div *ngIf="displayProgress  && progress != 0" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <mat-progress-spinner
+            class="spinner"
+            mode="determinate"
+            [value]="progress">
+        </mat-progress-spinner>
+        <div class="progress-text">{{progress}}%</div>
+    </div>
+
+    <div *ngIf="displayProgress && progress == 0" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <mat-spinner
+            class="spinner">
+        </mat-spinner>
+        <div class="progress-text">Initializing</div>
+    </div>
+
+    <div *ngIf="displayError" style="justify-content: center; align-items: center; max-height: 100%; overflow-y: auto; overflow-x: hidden; width: 100%;">
+        <mat-icon class="warn-icon">warning</mat-icon>
+        <div class="warn-text">{{error}}</div>
+    </div>
+
+    
+    <img *ngIf="displayImage" [src]="image" class="new-img" alt="Sign Thumbnail">
+    
+</div>
