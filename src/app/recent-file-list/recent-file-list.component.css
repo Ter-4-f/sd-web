@@ -4,10 +4,11 @@
 
 .list-align {
   width: 100%;
-  padding: 0 auto;
 }
 
-.list-container {
+.list-cotainer {
+  margin: 0 auto;
+  min-width: var(--img-size);
   padding: 5px;
   border: 2px solid gray;
   border-radius: 5px;
@@ -15,11 +16,14 @@
   min-height: var(--img-size);
   background-color: var(--background-minor);
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, var(--img-size));
+  grid-auto-columns: 0px;
   grid-gap: 10px;
   justify-content: center;
+  display: grid;
+  width: fit-content;
 }
+
+
 
 img {
   height: var(--img-size);
@@ -27,4 +31,38 @@ img {
   overflow: hidden;
   border-radius: 10px;
 }
+
+@media (max-width: 690px) {
+  .list-align .list-cotainer {
+    grid-template-columns: repeat(1, minmax(0px, var(--img-size)));
+  }
+}
+
+@media (min-width: 690px) and (max-width: 1020px) {
+  .list-align .list-cotainer {
+    grid-template-columns: repeat(2, minmax(0px, var(--img-size)));
+  }
+}
+
+@media (min-width: 1020px) and (max-width: 1350px) {
+  .list-align .list-cotainer {
+    grid-template-columns: repeat(3, minmax(0px, var(--img-size)));
+  }
+}
+
+
+@media (min-width: 1350px) and (max-width: 1700px) {
+  .list-align .list-cotainer {
+    grid-template-columns: repeat(4, minmax(0px, var(--img-size)));
+  }
+}
+
+
+@media (min-width: 1700px) {
+  .list-align .list-cotainer {
+    grid-template-columns: repeat(5, minmax(0px, var(--img-size)));
+  }
+}
+
+
 
