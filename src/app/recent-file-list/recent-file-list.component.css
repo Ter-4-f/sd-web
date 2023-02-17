@@ -11,18 +11,11 @@
   min-height: var(--img-size);
   background-color: var(--background-minor);
 
-
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  row-gap: 10px;
-  column-gap: 10px;
+  display: grid; /* 1 */
+  grid-template-columns: repeat(auto-fill, var(--img-size)); /* 2 */
+  grid-gap: 1rem; /* 3 */
+  justify-content: space-between; /* 4 */
 }
-.list-container::after {
-  content: "";
-  flex: auto;
-}
-
 
 img {
   height: var(--img-size);
