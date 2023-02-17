@@ -1,0 +1,21 @@
+<div>
+    <div class="list-container">
+        <img *ngFor="let image of images" [src]="image.image" (click)="showInfo(image.config)" alt="Sign Thumbnail">
+    </div>
+
+    <div style="width: 100%; display: flex; margin-top: 5px;">
+        <div style="flex: 1;"></div>
+
+        <div style="display: flex; gap: 12px; margin-bottom: 5px;">
+            <p>Show Versions?</p>
+            <section class="example-section">
+                <mat-slide-toggle
+                    class="example-margin"
+                    color="primary"
+                    [(ngModel)]="showVersions"
+                    (change)="updateList()">
+                </mat-slide-toggle>
+            </section>
+        </div>
+    </div>
+</div>

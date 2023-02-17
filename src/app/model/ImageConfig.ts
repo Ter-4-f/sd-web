@@ -1,6 +1,7 @@
 export interface ImageConfig {
     prompt: string;
     name?: string;
+    id?: string;
     seed?: number;
     inferenceSteps?: number;
     size?: number;

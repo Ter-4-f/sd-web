@@ -6,6 +6,11 @@ app-image-maker {
     margin-top: 12px;
 }
 
+app-recent-file-list {
+  margin-top: 30px;
+  width: 100%;
+}
+
 #generate_button {
     width: 200px;
     height: 50px;

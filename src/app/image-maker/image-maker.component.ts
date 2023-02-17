@@ -12,7 +12,7 @@ import { SafeUrl } from '@angular/platform-browser';
   templateUrl: './image-maker.component.html',
   styleUrls: ['./image-maker.component.css']
 })
-export class ImageMakerComponent{  
+export class ImageMakerComponent{
 
   @Input() set config(value: ImageConfig) {
     if (this.initialized) {
@@ -33,15 +33,15 @@ export class ImageMakerComponent{
 
   private initialized = false;
 
-  
+
   constructor(private backendService: BackendService) { }
-  
+
   public makeImage (config: ImageConfig) {
     this.progress = 0;
     this.displayProgress = true;
     this.displayError = false;
     this.displayImage = false;
-    
+
     this.backendService.createImage(config)
       .subscribe({
         next: (data) => this.updateProgress(data),
@@ -49,7 +49,7 @@ export class ImageMakerComponent{
       })
   }
 
-  private loadImage (name: string) {    
+  private loadImage (name: string) {
     this.backendService.getImage(name)
       .then(image => {
         this.image = image;
@@ -78,7 +78,7 @@ export class ImageMakerComponent{
 
   private progressError (error: any, job: Job) {
     if (error.error.status === 404) {
-      this.loadImage(job.name);
+      this.loadImage(job.imageId);
     } else {
       this.handleError(error);
     }

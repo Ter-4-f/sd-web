@@ -8,11 +8,12 @@
     --bg-main-color: #111827;
     --scrollbar-color: #1E3A8A;
     --background-highlight: #190061;
+    --background-minor: #1e273c;
   }
-  
 
 
-html, body { 
+
+html, body {
     background-color: var(--bg-main-color);
     margin: 0px;
     padding: 0px;
@@ -57,13 +58,13 @@ p {
 
 /* TODO fic scrolling style for Chrome usw. */
 .output {
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: visible;
     min-height: 2em;
     font-size: 18px;
     flex: 1;
     color: var(--text-highlight-color);
-    
+
     white-space: nowrap;
     scrollbar-color: var(--scrollbar-color) rgba(0, 0, 0, 0);
     scrollbar-width: thin;

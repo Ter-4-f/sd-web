@@ -1,5 +1,5 @@
 export interface Job {
     id: string;
-    name: string;
+    imageId: string;
     progress: number;
 }

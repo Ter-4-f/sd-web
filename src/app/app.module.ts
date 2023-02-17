@@ -16,13 +16,15 @@ import { AppComponent } from './app.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { PromptBuilderComponent } from './prompt-builder/prompt-builder.component';
 import { ImageMakerComponent } from './image-maker/image-maker.component';
+import { RecentFileListComponent } from './recent-file-list/recent-file-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GeneratorComponent,
     PromptBuilderComponent,
-    ImageMakerComponent
+    ImageMakerComponent,
+    RecentFileListComponent
   ],
   imports: [
     BrowserModule,

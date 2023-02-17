@@ -9,17 +9,18 @@ import { ImageConfig } from '../model/ImageConfig';
   styleUrls: ['./generator.component.css']
 })
 export class GeneratorComponent implements OnInit  {
-  
+
   private generateButton: HTMLElement | null = null;
 
   protected config: ImageConfig;
 
   canGenerate = false;
+  updateList = false;
   prompt = "";
 
 
   constructor () {}
-  
+
   ngOnInit(): void {
     this.generateButton = document.getElementById("generate_button");
   }
@@ -35,6 +36,9 @@ export class GeneratorComponent implements OnInit  {
 
 
   public onGenerate() {
+    this.updateList = false;
+    this.updateList = true;
+
     this.config = {
       prompt: this.prompt,
       // name: string,

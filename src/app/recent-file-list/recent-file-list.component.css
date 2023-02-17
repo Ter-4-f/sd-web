@@ -1,0 +1,33 @@
+* {
+  --img-size: 256px;
+}
+
+.list-container {
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 5px;
+
+  width: 100%;
+  min-height: var(--img-size);
+  background-color: var(--background-minor);
+
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.list-container::after {
+  content: "";
+  flex: auto;
+}
+
+
+img {
+  height: var(--img-size);
+  width: var(--img-size);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
