@@ -1,6 +1,8 @@
 <div>
-    <div class="list-container">
-        <img *ngFor="let image of images" [src]="image.image" (click)="showInfo(image.config)" alt="Sign Thumbnail">
+    <div class="list-align">
+        <div class="list-container">
+          <img *ngFor="let image of images" [src]="image.image" (click)="showInfo(image.config)" alt="Sign Thumbnail">
+      </div>
     </div>
 
     <div style="width: 100%; display: flex; margin-top: 5px;">

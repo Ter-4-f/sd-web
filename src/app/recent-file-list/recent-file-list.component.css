@@ -2,19 +2,23 @@
   --img-size: 256px;
 }
 
+.list-align {
+  width: 100%;
+  padding: 0 auto;
+}
+
 .list-container {
   padding: 5px;
   border: 2px solid gray;
   border-radius: 5px;
 
-  width: 100%;
   min-height: var(--img-size);
   background-color: var(--background-minor);
 
-  display: grid; /* 1 */
-  grid-template-columns: repeat(auto-fill, var(--img-size)); /* 2 */
-  grid-gap: 1rem; /* 3 */
-  justify-content: space-between; /* 4 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--img-size));
+  grid-gap: 10px;
+  justify-content: center;
 }
 
 img {
