@@ -1,6 +1,14 @@
-<div class="content">
+<div class="content" style="min-width: 650px;">
   <app-prompt-builder (promptReadyEvent)="updatePromtStatus($event)" (promptEvent)="updatePromt($event)"></app-prompt-builder>
-  <button id="generate_button" [disabled]="!canGenerate" (click)="onGenerate()">Generate Image</button>
+
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; margin-top: 24px;">
+    <button id="generate_button" [disabled]="!canGenerate" (click)="onGenerate()">Generate Image</button>
+
+    <mat-icon matTooltip="Edit Advance Options" matTooltipShowDelay="500" (click)="showAdvancedOptions()" class="icon icon-interactive" style="position: absolute; right: 0;">settings</mat-icon>
+  </div>
+
+
+
   <app-image-maker [config]="config"></app-image-maker>
   <app-recent-file-list [updateEvent]="updateList"></app-recent-file-list>
 </div>

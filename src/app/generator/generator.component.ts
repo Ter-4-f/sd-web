@@ -51,4 +51,9 @@ export class GeneratorComponent implements OnInit  {
       // generationTimeSeconds: number
     };
   }
+
+  protected showAdvancedOptions () {
+    // open dialog with the options
+    // load options from local storage
+  }
 }

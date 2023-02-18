@@ -18,7 +18,6 @@ app-recent-file-list {
     background-color: #A21CAF;
     color: var(--text-highlight-color);
     font-size: 16px;
-    margin-top: 24px;
 }
 
 #generate_button:disabled {

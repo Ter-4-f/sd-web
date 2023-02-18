@@ -1,5 +1,7 @@
 * {
   --img-size: 256px;
+  --from-width: 0px;
+  --to-width: 0px;
 }
 
 .list-align {
@@ -7,20 +9,21 @@
 }
 
 .list-cotainer {
-  margin: 0 auto;
+  --grid-columns: 3;
   min-width: var(--img-size);
   padding: 5px;
   border: 2px solid gray;
   border-radius: 5px;
 
+  width: fit-content;
   min-height: var(--img-size);
   background-color: var(--background-minor);
 
   grid-auto-columns: 0px;
   grid-gap: 10px;
-  justify-content: center;
+  justify-content: start;
   display: grid;
-  width: fit-content;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0px, var(--img-size)));
 }
 
 
@@ -32,20 +35,47 @@ img {
   border-radius: 10px;
 }
 
-@media (max-width: 690px) {
-  .list-align .list-cotainer {
-    grid-template-columns: repeat(1, minmax(0px, var(--img-size)));
-  }
+@keyframes changeWidth {
+  from {width: var(--from-width);}
+  to { width: var(--to-width); }
 }
 
-@media (min-width: 690px) and (max-width: 1020px) {
+/* @keyframes changeWidth {
+  from {width: 2000px;}
+  to { width: 800px; }
+} */
+
+.size-animation {
+  animation-name: changeWidth;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+
+/* @media (max-width: 1020px) {
   .list-align .list-cotainer {
     grid-template-columns: repeat(2, minmax(0px, var(--img-size)));
   }
 }
 
+@keyframes example {
+  from {width: fit-content;}
+  to { width: fit-content; }
+}
+
+
+.baba {
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background-color: aqua;
+}
+
 @media (min-width: 1020px) and (max-width: 1350px) {
   .list-align .list-cotainer {
+    background-color: aqua;
+    animation-name: example;
+    animation-duration: 0s;
     grid-template-columns: repeat(3, minmax(0px, var(--img-size)));
   }
 }
@@ -62,7 +92,7 @@ img {
   .list-align .list-cotainer {
     grid-template-columns: repeat(5, minmax(0px, var(--img-size)));
   }
-}
+} */
 
 
 
