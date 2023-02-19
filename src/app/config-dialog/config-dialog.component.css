@@ -1,0 +1,8 @@
+.dialog {
+  background-color: var(--background-highlight);
+  min-height: 400px;
+  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}

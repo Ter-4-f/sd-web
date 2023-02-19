@@ -68,8 +68,7 @@ p {
     white-space: nowrap;
     scrollbar-color: var(--scrollbar-color) rgba(0, 0, 0, 0);
     scrollbar-width: thin;
-}
-.output * {
+
     border-bottom: 2px solid white;
     color: inherit;
     font-size: inherit;
@@ -113,11 +112,39 @@ input::placeholder {
 } */
 
 
+.config-dialog {
+  overflow: hidden !important;
+  border-radius: 15px;
+}
 
 
+.config-dialog * :not(.mdc-text-field--filled):not(.mdc-text-field--filled *):not(.dialog-button) {
+  background-color: var(--background-highlight) !important;
+}
 
+.dialog-button {
+  color: var(--text-highlight-color);
+  flex: 1;
+  min-height: 32px;
+  min-width: 64px;
+  border: 1px solid var(--background-minor);
+  border-radius: 10px;
+  padding: 10px;
+}
 
+.dialog-button.primary {
+  background-color: #0029f7 !important;
+}
+.dialog-button.primary:hover {
+  background-color: #2347ff !important;
+}
 
+.dialog-button.secondary {
+  background-color: #4a5798 !important;
+}
+.dialog-button.secondary:hover {
+  background-color: #6d78b2 !important;
+}
 
 
 

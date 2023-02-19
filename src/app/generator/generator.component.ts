@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfigDialogComponent } from '../config-dialog/config-dialog.component';
 import { ImageMakerComponent } from '../image-maker/image-maker.component';
-import { ImageConfig } from '../model/ImageConfig';
+import { COPY_CONFIG, ImageConfig } from '../model/ImageConfig';
+import { LocalImageConfigService } from '../services/local-image-config.service';
 
 @Component({
   providers: [ImageMakerComponent],
@@ -10,19 +13,18 @@ import { ImageConfig } from '../model/ImageConfig';
 })
 export class GeneratorComponent implements OnInit  {
 
-  private generateButton: HTMLElement | null = null;
+  protected generationConfig: ImageConfig;
+  protected canGenerate = false;
+  protected updateList = false;
 
-  protected config: ImageConfig;
-
-  canGenerate = false;
-  updateList = false;
-  prompt = "";
+  private config: ImageConfig;
+  private generateImage = false;
 
 
-  constructor () {}
+  constructor (private localConfig: LocalImageConfigService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.generateButton = document.getElementById("generate_button");
+    this.config = this.localConfig.loadConfig();
   }
 
 
@@ -31,28 +33,33 @@ export class GeneratorComponent implements OnInit  {
   }
 
   public updatePromt (value: string) {
-    this.prompt = value;
+    this.config.prompt = value;
+  }
+
+  public updateName (value: string) {
+    if (value && value !== "") {
+      this.config.name = value;
+    }
   }
 
 
   public onGenerate() {
     this.updateList = false;
-    this.updateList = true;
+    setTimeout(() => { this.updateList = true; });
 
-    this.config = {
-      prompt: this.prompt,
-      // name: string,
-      // seed: number,
-      inferenceSteps: 5,
-      // size: number,
-      // guidanceScale: number,
-      // version: number,
-      // createdAt: string,
-      // generationTimeSeconds: number
-    };
+    this.generationConfig = COPY_CONFIG(this.config)
   }
 
   protected showAdvancedOptions () {
+    const dialogRef = this.dialog.open(ConfigDialogComponent, {
+      data: this.config,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result != undefined) {
+        this.config = result;
+      }
+    });
     // open dialog with the options
     // load options from local storage
   }

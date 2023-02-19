@@ -1,5 +1,5 @@
 <div class="content" style="min-width: 650px;">
-  <app-prompt-builder (promptReadyEvent)="updatePromtStatus($event)" (promptEvent)="updatePromt($event)"></app-prompt-builder>
+  <app-prompt-builder (promptReadyEvent)="updatePromtStatus($event)" (promptEvent)="updatePromt($event)" (nameEvent)="updateName($event)"></app-prompt-builder>
 
   <div style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative; margin-top: 24px;">
     <button id="generate_button" [disabled]="!canGenerate" (click)="onGenerate()">Generate Image</button>
@@ -9,6 +9,6 @@
 
 
 
-  <app-image-maker [config]="config"></app-image-maker>
+  <app-image-maker [config]="generationConfig"></app-image-maker>
   <app-recent-file-list [updateEvent]="updateList"></app-recent-file-list>
 </div>

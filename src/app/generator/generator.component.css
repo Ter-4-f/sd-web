@@ -11,6 +11,13 @@ app-recent-file-list {
   width: 100%;
 }
 
+app-config-dialog {
+  min-width: 900px;
+  background-color: var(--background-highlight);
+}
+
+
+
 #generate_button {
     width: 200px;
     height: 50px;

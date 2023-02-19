@@ -1,0 +1,25 @@
+<div class="dialog">
+
+  <mat-form-field>
+    <mat-label matTooltip="The Width and Height of the Image" matTooltipShowDelay="500">Size</mat-label>
+    <input [(ngModel)]="config.size" matInput (input)="intOnly($event)" type="text" placeholder="Optional, usually 512">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label matTooltip="Number of Iterations" matTooltipShowDelay="500">Inference Steps</mat-label>
+    <input [(ngModel)]="config.inferenceSteps" matInput (input)="intOnly($event)" type="text" placeholder="Optional, usually 25">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label matTooltip="The Higher, the stricter the Image will follow the Prompt" matTooltipShowDelay="500">Guidance Scale</mat-label>
+    <input [(ngModel)]="config.guidanceScale" matInput (input)="floatOnly($event)" type="text" placeholder="Optional, usually 7.5">
+  </mat-form-field>
+
+  <div style="flex: 1;"></div>
+
+  <div mat-dialog-actions style="display: flex; flex-direction: row; justify-content: center; height: fit-content; width: 100%; gap: 10px;">
+    <button class="dialog-button secondary" mat-button (click)="this.dialogRef.close()">No Thanks</button>
+    <button class="dialog-button primary"mat-button [mat-dialog-close]="config" cdkFocusInitial>Ok</button>
+  </div>
+
+</div>
