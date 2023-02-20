@@ -69,9 +69,16 @@ p {
     scrollbar-color: var(--scrollbar-color) rgba(0, 0, 0, 0);
     scrollbar-width: thin;
 
-    border-bottom: 2px solid white;
+
     color: inherit;
     font-size: inherit;
+}
+
+
+.output input {
+  color: var(--text-highlight-color) !important;
+  min-height: 2em !important;
+  font-size: 18px !important;
 }
 
 mat-slide-toggle {

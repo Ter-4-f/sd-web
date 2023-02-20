@@ -2,7 +2,7 @@
     <div style="display: flex; gap: 12px;">
         <mat-form-field style="flex: 1;">
             <mat-label>Main Subject</mat-label>
-            <input [(ngModel)]="subject" (input)="subject=subject.trim(); updatePrompt();" matInput placeholder="yellow lemon tree">
+            <input [(ngModel)]="subject" (input)="onSubjectChange();" matInput placeholder="yellow lemon tree">
 
             <div class="marker marker-input" style="background-color: var(--subject);"></div>
         </mat-form-field>
@@ -12,7 +12,7 @@
         <div style="flex: 1; display: inline-flex; overflow: hidden;">
             <mat-form-field style="flex: 1;">
                 <mat-label>Type of Picture</mat-label>
-                <input [(ngModel)]="typeOfPicture" (input)="typeOfPicture=typeOfPicture.trim(); updatePrompt();" matInput placeholder="polaroid picture">
+                <input [(ngModel)]="typeOfPicture" (input)="onPictureChange();" matInput placeholder="polaroid picture">
 
                 <div class="marker marker-input" style="background-color: var(--picture);"></div>
             </mat-form-field>
@@ -34,7 +34,7 @@
         <div style="flex: 1; display: inline-flex; overflow: hidden;">
             <mat-form-field style="flex: 1;">
                 <mat-label>Style</mat-label>
-                <input [(ngModel)]="style" (input)="style=style.trim(); updatePrompt();" matInput placeholder="4k UHD">
+                <input [(ngModel)]="style" (input)="onStyleChange();" matInput placeholder="4k UHD">
 
                 <div class="marker marker-input" style="background-color: var(--style);"></div>
             </mat-form-field>
@@ -50,7 +50,7 @@
         <div style="flex: 1; display: inline-flex; overflow: hidden;">
             <mat-form-field style="flex: 1;">
                 <mat-label>Artist</mat-label>
-                <input [(ngModel)]="artist" (input)="artist=artist.trim(); updatePrompt();" matInput placeholder="Bob Ross">
+                <input [(ngModel)]="artist" (input)="onArtistChange();" matInput placeholder="Bob Ross">
 
                 <div class="marker marker-input" style="background-color: var(--artist);"></div>
             </mat-form-field>
@@ -82,7 +82,7 @@
       <div style="display: flex">
 
         <mat-form-field class="output">
-          <input [(ngModel)]="prompt" type="text" (input)="updatePrompt(); markerUpdate()" #prompt_out matInput placeholder="Complete Prompt">
+          <input class="output" [(ngModel)]="prompt" type="text" (input)="updatedCompletePrompt()" #prompt_out matInput placeholder="Complete Prompt">
 
           <!-- Background text marker -->
           <div class="highlight-container">
@@ -95,7 +95,5 @@
 
         <img src="assets/copy.svg" class="icon icon-interactive" matTooltip="Copy Prompt" matTooltipShowDelay="500" [cdkCopyToClipboard]="prompt" style="margin-left: 6px; margin-top: 4px;">
     </div>
-
-    <button (click)="markerUpdate();">Click me</button>
   </div>
 </div>

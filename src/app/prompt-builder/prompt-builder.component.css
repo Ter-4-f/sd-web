@@ -7,35 +7,35 @@
 .highlight-container {
   position: absolute;
   left: 0;
-  top: 0;
-  height: 100%;
+  bottom: 0;
+  height: 20%;
   display: flex;
   flex-direction: row;
-}
-
-.marker {
-  --subject: red;
-  --artist: purple;
-  --picture: blue;
-  --style: greenYellow;
-
-  opacity: 0.1;
-  border-radius: 5px;
-  height: 100%;
-  width: fit-content;
-  color: rgba(0, 0, 0, 0);
   z-index: -1;
 }
 
-.marker-input {
+.marker {
+  --subject: rgb(255, 72, 0);
+  --artist: rgb(27, 198, 135);
+  --picture: rgb(255, 187, 0);
+  --style: rgb(47, 255, 224);
+
   opacity: 0.2;
+  height: 100%;
+  width: fit-content;
+  color: rgba(0, 0, 0, 0);
+  z-index: -2;
+
+}
+
+.marker-input {
   border-radius: 5px;
   height: 100%;
   width: 64px;
   z-index: -1;
   position: absolute;
-  top: 0;
   right: -16px;
+  bottom: 0;
 }
 
 .unselectable {
